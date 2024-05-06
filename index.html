@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phone Call Initiator</title>
+    <title>Call</title>
 </head>
 <body>
     <script>
         // Function to initiate the call
         function initiateCall() {
             var pathParts = window.location.pathname.split('/');
-            var phoneNumber = pathParts[pathParts.length - 1];
+            var phoneNumber = pathParts[pathParts.length - 1].split('=')[1];
 
             // Format the phone number if needed
             phoneNumber = phoneNumber.replace(/\D/g, ''); // Remove non-numeric characters
