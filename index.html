@@ -9,8 +9,7 @@
     <script>
         // Function to initiate the call
         function initiateCall() {
-            var path = window.location.pathname;
-            var phoneNumber = path.substring(path.lastIndexOf('/') + 1);
+            var phoneNumber = window.location.pathname.split('/').pop();
 
             // Format the phone number if needed
             phoneNumber = phoneNumber.replace(/\D/g, ''); // Remove non-numeric characters
