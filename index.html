@@ -9,13 +9,20 @@
     <script>
         // Function to initiate the call
         function initiateCall() {
-            var phoneNumber = window.location.pathname.split('/').pop();
+            var pathParts = window.location.pathname.split('/');
+            var phoneNumber = pathParts[pathParts.length - 1];
 
             // Format the phone number if needed
             phoneNumber = phoneNumber.replace(/\D/g, ''); // Remove non-numeric characters
             
-            // Initiate the phone call
-            window.open('tel:' + phoneNumber);
+            // Check if a phone number is provided
+            if (phoneNumber) {
+                // Initiate the phone call
+                window.open('tel:' + phoneNumber);
+            } else {
+                // Inform the user that no phone number is provided
+                alert("No phone number provided in the URL.");
+            }
         }
 
         // Automatically initiate the call when the page loads
