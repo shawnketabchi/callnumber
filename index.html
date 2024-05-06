@@ -19,6 +19,8 @@
             if (phoneNumber) {
                 // Initiate the phone call
                 window.open('tel:' + phoneNumber);
+                // Close the window
+                window.close();
             } else {
                 // Inform the user that no phone number is provided
                 alert("No phone number provided in the URL.");
