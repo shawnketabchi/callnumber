@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Call Initiator</title>
+</head>
+<body>
+    <script>
+        // Function to initiate the call
+        function initiateCall() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var phoneNumber = urlParams.get('callnumber');
+
+            // Check if the phone number is provided in the URL
+            if (phoneNumber) {
+                // Format the phone number if needed
+                phoneNumber = phoneNumber.replace(/\D/g, ''); // Remove non-numeric characters
+                // Initiate the phone call
+                window.open('tel:' + phoneNumber);
+            } else {
+                // Alert the user if phone number is not provided in the URL
+                alert("No phone number provided in the URL.");
+            }
+        }
+
+        // Automatically initiate the call when the page loads
+        window.onload = function() {
+            initiateCall();
+        };
+    </script>
+</body>
+</html>
